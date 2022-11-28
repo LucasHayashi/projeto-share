@@ -20,7 +20,7 @@ Depois da instalação do XAMPP, é necessário habilitar a extesão GD no arqui
 
 É necessário clonar os arquivos do projeto, para isso escolha um diretório de sua preferência, abra o terminal do git execute o comando abaixo:
 ```
-git clone https://github.com/Projeto-Share/share.git
+git clone https://github.com/LucasHayashi/projeto-share.git
 ```
 
 ## Configurações do projeto
