@@ -38,7 +38,18 @@ return [
     */
 
     'mapbox_api_key' => env('MAPBOX_API_KEY'),
-    
+
+    /*
+    |--------------------------------------------------------------------------
+    | Storage Path
+    |--------------------------------------------------------------------------
+    |
+    | Full path of the site where the images are saved.
+    |
+    */
+
+    'storage_path' => env('STORAGE_PATH'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode

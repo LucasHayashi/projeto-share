@@ -189,7 +189,7 @@ class DashboardController extends Controller
         Storage::disk('ftp')->put('publicacoes/' . $name,  (string) $resize_image->encode());
 
         $publicacao->nm_imagem = $name;
-        $publicacao->path_imagem = 'https://projetoscti.com.br/projetoscti01/tcc/publicacoes/' . $name;
+        $publicacao->path_imagem = config('app.storage_path') . $name;
 
         $publicacao->titulo = $request->titulo;
         $publicacao->descricao = $request->descricao;
@@ -235,7 +235,7 @@ class DashboardController extends Controller
             Storage::disk('ftp')->put('publicacoes/' . $name,  (string) $resize_image->encode());
 
             $publicacao->nm_imagem = $name;
-            $publicacao->path_imagem = 'http://projetoscti.com.br/projetoscti01/tcc/publicacoes/' . $name;
+            $publicacao->path_imagem = config('app.storage_path') . $name;
         }
 
         $publicacao->titulo = $request->titulo;

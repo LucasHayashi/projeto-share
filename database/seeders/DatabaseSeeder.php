@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
             TiposSeeder::class,
             SituacoesSeeder::class,
             TiposPublicacao::class,
-            ProfileIconSeeder::class
+            ProfileIconSeeder::class,
+            UserSeeder::class
         ]);
     }
 }
