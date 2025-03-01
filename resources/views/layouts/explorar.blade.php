@@ -10,13 +10,14 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
     <!-- Mapbox CSS -->
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
     <!-- Explorar CSS -->
     <link href="/css/explorar.css" rel="stylesheet" />
     <!-- Bootstrap CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -64,38 +65,37 @@
             </nav>
         </header>
         @yield('content')
-        <footer class="mt-auto">
-            <div class="container">
-                <div class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
-                    <p class="col-md-4 mb-0 text-muted">© 2022 Share</p>
-
-                    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                        <img src="/img/logo.png" alt="logo" height="35">
-                    </a>
-
-                    <ul class="nav col-md-4 justify-content-end">
-                        <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Inicio</a></li>
-                        <li class="nav-item"><a href="/explorar" class="nav-link px-2 text-muted">Explorar</a></li>
-                        <li class="nav-item"><a href="/login" class="nav-link px-2 text-muted">Login</a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
-        <!-- Jquery -->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
-        <!-- Mapbox JS -->
-        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'></script>
-        <!-- Funções para controlar o Mapbox -->
-        <script type="text/javascript" src="/js/funcoesMapbox.js"></script>
-        <!-- Funções para controlar modais e interações com o Mapbox -->
-        <script type="text/javascript" src="/js/funcoesExplorar.js"></script>
-        <!-- Notify JS -->
-        <script type="text/javascript" src="/js/plugins/notify.min.js"></script>
-        <!-- Bootstrap JS-->
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- QrCode -->
-        <script type="text/javascript" src="/js/plugins/qrcode.min.js"></script>
     </main>
+    <footer class="mt-auto">
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
+                <p class="col-md-4 mb-0 text-muted">© 2022 Share</p>
+
+                <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                    <img src="/img/logo.png" alt="logo" height="35">
+                </a>
+
+                <ul class="nav col-md-4 justify-content-end">
+                    <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Inicio</a></li>
+                    <li class="nav-item"><a href="/explorar" class="nav-link px-2 text-muted">Explorar</a></li>
+                    <li class="nav-item"><a href="/login" class="nav-link px-2 text-muted">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- Jquery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- Mapbox JS -->
+    <!-- Funções para controlar o Mapbox -->
+    <script type="text/javascript" src="/js/funcoesMapbox.js"></script>
+    <!-- Funções para controlar modais e interações com o Mapbox -->
+    <script type="text/javascript" src="/js/funcoesExplorar.js"></script>
+    <!-- Notify JS -->
+    <script type="text/javascript" src="/js/plugins/notify.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- QrCode -->
+    <script type="text/javascript" src="/js/plugins/qrcode.min.js"></script>
 </body>
 
 </html>

@@ -1,25 +1,41 @@
+html,
 body {
+    height: 100%;
     margin: 0;
-    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    flex-shrink: 0;
 }
 
 #map-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     position: relative;
-    height: 95vh;
+}
+
+#map {
+    flex-grow: 1;
     width: 100%;
 }
 
 #visualizar-projetos {
-    max-width: 300px;
-    position: relative;
-    top: 20px;
-    left: 20px;
-}
-
-#map {
+    max-width: 320px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 10;
+    margin: 10px auto 30px;
     position: absolute;
-    height: inherit;
-    width: inherit;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 a {

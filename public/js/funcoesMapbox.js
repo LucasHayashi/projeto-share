@@ -3,6 +3,12 @@ const mapboxApiKey = document
     .getElementsByName("mapbox_api_key")[0]
     .getAttribute("content");
 
+// Função para fechar o OffsetCanvas
+function fecharOffsetCanvas() {
+    var offcanvasElement = document.getElementById("offcanvasListaProjetos");
+    var offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvasElement);
+    offcanvasInstance.hide();
+}
 // Função responsável por criar o mapa e toda a interatividade
 function construirMapa(projetos) {
     mapboxgl.accessToken = mapboxApiKey;
@@ -13,9 +19,9 @@ function construirMapa(projetos) {
      */
     const map = new mapboxgl.Map({
         container: "map",
-        style: "mapbox://styles/lucashayashi/cl729ryb9000714n1j3k69z7q",
+        style: "mapbox://styles/mapbox/streets-v12",
         center: [-49.06889, -22.32537],
-        zoom: 13,
+        zoom: 12,
     });
 
     map.on("load", () => {
@@ -89,7 +95,6 @@ function construirMapa(projetos) {
 
             // Cria um link personalizado para cada item da lista
             const link = listing.appendChild(document.createElement("a"));
-            link.href = "#";
             link.className = "title";
             link.id = `link-${store.properties.id}`;
             link.innerHTML = `${store.properties.name}`;
@@ -106,6 +111,7 @@ function construirMapa(projetos) {
                 e.preventDefault();
                 for (const feature of projetos.features) {
                     if (this.id === `link-${feature.properties.id}`) {
+                        fecharOffsetCanvas();
                         voarParaProjeto(feature);
                         criarPopUp(feature);
                     }
@@ -127,7 +133,7 @@ function construirMapa(projetos) {
         // A função 'flyTo' move a camera do mapa suavemente para o centro do ponto
         map.flyTo({
             center: currentFeature.geometry.coordinates,
-            zoom: 15,
+            zoom: 13,
         });
     }
 
@@ -142,19 +148,20 @@ function construirMapa(projetos) {
         let { id, name, rua, bairro, cidade, uf, celular, email } =
             currentFeature.properties;
 
-        // A função 'Popup' cria um popup de acordo com o elemento html criado
         const popup = new mapboxgl.Popup({
-            closeOnClick: false,
+            closeOnClick: true,
+            closeButton: true,
+            focusAfterOpen: false,
         })
             .setLngLat(currentFeature.geometry.coordinates)
             .setHTML(
                 `<h3>${name}</h3>
-                    <ul>
-                        <li>${rua}, ${bairro}, ${cidade}, ${uf}</li>
-                        <li>Celular: ${celular}</li>
-                        <li>E-mail: ${email}</li>
-                        <li><button class="btn btn-share mt-3" onclick="carregaPublicacao(${id}, '${name}')">Ver publicações</button></li>
-                    </ul>`
+                <ul>
+                    <li>${rua}, ${bairro}, ${cidade}, ${uf}</li>
+                    <li>Celular: ${celular}</li>
+                    <li>E-mail: ${email}</li>
+                    <li><button class="btn btn-share mt-3" tabindex="-1" onclick="carregaPublicacao(${id}, '${name}')">Ver publicações</button></li>
+                </ul>`
             )
             .addTo(map);
     }
@@ -205,7 +212,7 @@ async function pegaCoordenadas() {
         };
 
         // Url com o endpoint geocoding da mapbox
-        const geocoding = `https://api.mapbox.com/geocoding/v5/mapbox.places/${search_text}.json?access_token=${mapboxApiKey}`;
+        const geocoding = `https://api.mapbox.com/search/geocode/v6/forward?q=${search_text}&access_token=${mapboxApiKey}`;
         const response = await fetch(geocoding); // Faz a requisição para o endpoint
         const content = await response.json(); // Pega os dados de retorno em JSON e transforma em um objeto
         const coordArray = content.features[0].geometry.coordinates; // Armazena as coordenadas X e Y

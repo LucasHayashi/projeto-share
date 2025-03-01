@@ -42,7 +42,7 @@ async function carregaPublicacao(id_projeto, name) {
         html = `<div class="alert alert-danger">
                 O projeto ainda não fez publicações
             </div>`;
-            
+
         $(".titulo_aviso").text("Aviso");
         $("#conteudo_aviso").html(html);
         $("#avisoModal").modal("show");
