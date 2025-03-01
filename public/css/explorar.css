@@ -33,9 +33,7 @@ header {
     z-index: 10;
     margin: 10px auto 30px;
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
 }
 
 a {

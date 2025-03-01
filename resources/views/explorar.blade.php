@@ -7,10 +7,12 @@
     <div id="map">
 
     </div>
-    <div id="visualizar-projetos">
-        <button class="btn btn-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasListaProjetos" aria-controls="offcanvasListaProjetos">
-            Visualizar projetos
-        </button>
+    <div class="container">
+        <div id="visualizar-projetos">
+            <button class="btn btn-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasListaProjetos" aria-controls="offcanvasListaProjetos">
+                Visualizar projetos
+            </button>
+        </div>
     </div>
 </div>
 

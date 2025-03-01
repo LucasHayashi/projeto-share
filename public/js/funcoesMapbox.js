@@ -152,6 +152,7 @@ function construirMapa(projetos) {
             closeOnClick: true,
             closeButton: true,
             focusAfterOpen: false,
+            anchor: "top",
         })
             .setLngLat(currentFeature.geometry.coordinates)
             .setHTML(
