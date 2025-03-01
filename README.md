@@ -1,7 +1,16 @@
 ## Sobre
 
-Este é o projeto de conclusão de curso do CTI Unesp desenvolvido por meu grupo.
-O projeto Share é um ecossistema que permite projetos sociais criar e gerenciar campanhas de doações. Os usuários podem interagir com as campanhas através de um mapa interativo e também realizar doações.
+Este projeto foi desenvolvido como trabalho de conclusão de curso pelo nosso grupo no CTI Unesp.
+
+O **Projeto Share** é um ecossistema inovador que facilita a criação e gestão de campanhas de doação para projetos sociais. A plataforma permite que os usuários descubram e interajam com campanhas por meio de um mapa interativo, além de possibilitar a realização de doações de forma prática e acessível.
+
+### Atualização (2025)
+
+Em 2025, realizei um upgrade da versão do Laravel, passando do Laravel 8 para o Laravel 12, garantindo maior segurança, desempenho e compatibilidade com novas tecnologias.
+
+---
+
+Se quiser mais ajustes ou mais detalhes técnicos na atualização, me avise! 🚀
 
 ## Instalação
 
