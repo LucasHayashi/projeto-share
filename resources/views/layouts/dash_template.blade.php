@@ -35,38 +35,38 @@
                             <div class="nav-items">
                                 <ul class="w-100">
                                     @if (Auth()->user()->id_tipo == 2)
-                                        <li>
-                                            <a href="/dashboard">
-                                                <i class="bi bi-house-heart-fill"></i>
-                                                <span>Dashboard</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/publicar">
-                                                <i class="bi bi-pencil-square"></i>
-                                                <span>Criar publicação</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/metricas">
-                                                <i class="bi bi-graph-up-arrow"></i>
-                                                <span>Métricas</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/conta">
-                                                <i class="bi bi-wallet"></i>
-                                                <span>Formas de recebimento</span>
-                                            </a>
-                                        </li>
+                                    <li>
+                                        <a href="/dashboard">
+                                            <i class="bi bi-house-heart-fill"></i>
+                                            <span>Dashboard</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/publicar">
+                                            <i class="bi bi-pencil-square"></i>
+                                            <span>Criar publicação</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/metricas">
+                                            <i class="bi bi-graph-up-arrow"></i>
+                                            <span>Métricas</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/conta">
+                                            <i class="bi bi-wallet"></i>
+                                            <span>Formas de recebimento</span>
+                                        </a>
+                                    </li>
                                     @else
-                                        {{-- Todas opções do administrador --}}
-                                        <li>
-                                            <a href="/projetos">
-                                                <i class="bi bi-check-circle"></i>
-                                                <span>Aprovar Projetos</span>
-                                            </a>
-                                        </li>
+                                    {{-- Todas opções do administrador --}}
+                                    <li>
+                                        <a href="/projetos">
+                                            <i class="bi bi-check-circle"></i>
+                                            <span>Aprovar Projetos</span>
+                                        </a>
+                                    </li>
                                     @endif
                                     <li>
                                         <a href="/perfil">
@@ -90,24 +90,26 @@
                     <footer class="mt-auto">
                         <div class="container-fluid">
                             <div class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
-                                <p class="col-md-4 mb-0 text-muted">© 2022 Share</p>
+                                <div class="col-md-4 d-flex align-items-center">
+                                    <p class="mb-0 text-muted">© {{ date('Y') }} Share</p>
+                                    <a href="https://github.com/LucasHayashi/projeto-share" target="_blank" class="ms-2 text-muted">
+                                        <i class="bi bi-github" style="font-size: 1.2rem;"></i>
+                                    </a>
+                                </div>
 
-                                <a href="/"
-                                    class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                                <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
                                     <img src="/img/logo.png" alt="logo" height="35">
                                 </a>
 
                                 <ul class="nav col-md-4 justify-content-end">
-                                    <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Inicio</a>
-                                    </li>
-                                    <li class="nav-item"><a href="/explorar"
-                                            class="nav-link px-2 text-muted">Explorar</a></li>
-                                    <li class="nav-item"><a href="/logout" class="nav-link px-2 text-muted">Sair</a>
-                                    </li>
+                                    <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Inicio</a></li>
+                                    <li class="nav-item"><a href="/explorar" class="nav-link px-2 text-muted">Explorar</a></li>
+                                    <li class="nav-item"><a href="/logout" class="nav-link px-2 text-muted">Sair</a></li>
                                 </ul>
                             </div>
                         </div>
                     </footer>
+
                 </div>
             </div>
         </div>

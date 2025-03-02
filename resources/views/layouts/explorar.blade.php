@@ -69,7 +69,12 @@
     <footer class="mt-auto">
         <div class="container">
             <div class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
-                <p class="col-md-4 mb-0 text-muted">© 2022 Share</p>
+                <div class="col-md-4 d-flex align-items-center">
+                    <p class="mb-0 text-muted">© {{ date('Y') }} Share</p>
+                    <a href="https://github.com/LucasHayashi/projeto-share" target="_blank" class="ms-2 text-muted">
+                        <i class="bi bi-github" style="font-size: 1.2rem;"></i>
+                    </a>
+                </div>
 
                 <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
                     <img src="/img/logo.png" alt="logo" height="35">

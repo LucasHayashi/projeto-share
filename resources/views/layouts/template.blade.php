@@ -42,25 +42,25 @@
                         </ul>
                         <div class="d-flex">
                             @auth
-                                <div class="dropdown">
-                                    <a class="text-decoration-none dropdown-toggle link-light" type="button"
-                                        id="userActions" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Bem vindo, {{ auth()->user()->name }} <img
-                                            src="/img/profile_icons/{{ $nm_icon }}" class="rounded-circle"
-                                            height="50" alt="Profile Icon" loading="lazy" id="nav-profile-icon"/>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="userActions">
-                                        <li><a class="dropdown-item" href="/perfil">Perfil</a></li>
-                                        @if (Auth()->user()->id_tipo == 1)
-                                            <li><a class="dropdown-item" href="/minhas-doacoes">Minha Doações</a></li>
-                                        @else
-                                            <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
-                                        @endif
-                                        <li><a class="dropdown-item" href="/logout">Sair</a></li>
-                                    </ul>
-                                </div>
+                            <div class="dropdown">
+                                <a class="text-decoration-none dropdown-toggle link-light" type="button"
+                                    id="userActions" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Bem vindo, {{ auth()->user()->name }} <img
+                                        src="/img/profile_icons/{{ $nm_icon }}" class="rounded-circle"
+                                        height="50" alt="Profile Icon" loading="lazy" id="nav-profile-icon" />
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="userActions">
+                                    <li><a class="dropdown-item" href="/perfil">Perfil</a></li>
+                                    @if (Auth()->user()->id_tipo == 1)
+                                    <li><a class="dropdown-item" href="/minhas-doacoes">Minha Doações</a></li>
+                                    @else
+                                    <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+                                    @endif
+                                    <li><a class="dropdown-item" href="/logout">Sair</a></li>
+                                </ul>
+                            </div>
                             @else
-                                <a class="btn btn-share me-3" href="/login" role="button">Entrar</a>
+                            <a class="btn btn-share me-3" href="/login" role="button">Entrar</a>
                             @endauth
                         </div>
                     </div>
@@ -71,10 +71,14 @@
         <footer class="mt-auto">
             <div class="container">
                 <div class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
-                    <p class="col-md-4 mb-0 text-muted">© 2022 Share</p>
+                    <div class="col-md-4 d-flex align-items-center">
+                        <p class="mb-0 text-muted">© {{ date('Y') }} Share</p>
+                        <a href="https://github.com/LucasHayashi/projeto-share" target="_blank" class="ms-2 text-muted">
+                            <i class="bi bi-github" style="font-size: 1.2rem;"></i>
+                        </a>
+                    </div>
 
-                    <a href="/"
-                        class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
                         <img src="/img/logo.png" alt="logo" height="35">
                     </a>
 
