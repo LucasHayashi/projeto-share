@@ -1,14 +1,12 @@
 @component('mail::message')
-# Nova solicitação de projeto
+# Novo projeto na Share
 
 O projeto {{$nm_projeto}} acabou de realizar o cadastro na Share. 
 
-Analise o projeto o quanto antes para que novas pessoas sejam ajudadas!
-
 @component('mail::button', ['url' => $url])
-Confirmar projeto
+Ver projeto
 @endcomponent
 
-Obrigado,<br>
-Projeto Share
+Enviado por,<br>
+Sistem Share
 @endcomponent

@@ -47,23 +47,21 @@ class RegisterController extends Controller
             $user->id_tipo = $request->tipo;
         }
 
-        $user->save();
+        try {
+            $user->save();
 
-        if ($request->tipo == 2) {
-            try {
+            if ($request->tipo == 2) {
                 Mail::to([
                     'lucas.hayashi@unesp.br',
                     'victor.b.pereira@unesp.br'
                 ])->send(new ConfirmarProjeto($request->name));
-
-                return redirect('/login')->with('success', 'Sua conta foi criada, agora é só aguardar 
-                pela análise do nosso time!');
-            } catch (Exception $ex) {
-                return redirect('/login')->with('error', 'Erro ao criar a conta ' . $ex->getMessage());
             }
-        } else {
+
             auth()->login($user);
+
             return redirect('/explorar');
+        } catch (Exception $ex) {
+            return redirect('/login')->with('error', 'Erro ao criar a conta ' . $ex->getMessage());
         }
     }
 }

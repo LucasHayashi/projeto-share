@@ -29,7 +29,7 @@ class ConfirmarProjeto extends Mailable
      */
     public function build()
     {
-        return $this->subject('Confirmar novo projeto')->markdown('emails.confirmar.projeto',[
+        return $this->subject('Novo projeto criado')->markdown('emails.confirmar.projeto', [
             'nm_projeto' => $this->nm_projeto,
             'url'   => route('projetos'),
         ]);
